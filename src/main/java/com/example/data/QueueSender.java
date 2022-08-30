@@ -48,6 +48,6 @@ public class QueueSender {
         // shutdown connection
         session.close();
         con.close();
-        System.out.println(" >> Finished...");
+        System.out.println("\n\n >> Finished...");
     }
 }

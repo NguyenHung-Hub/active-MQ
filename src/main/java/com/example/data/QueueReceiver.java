@@ -43,7 +43,7 @@ public class QueueReceiver {
         // blocked-method for receiving message - sync
         // receiver.receive();
         // Cho receiver lắng nghe trên queue, chừng có message thì notify - async
-        System.out.println("Tý was listened on queue...");
+        System.out.println("\n>>NGUYEN HUNG was listened on queue...");
         receiver.setMessageListener(new MessageListener() {
             @Override
             // có message đến queue, phương thức này được thực thi
@@ -52,7 +52,7 @@ public class QueueReceiver {
                     if (msg instanceof TextMessage) {
                         TextMessage tm = (TextMessage) msg;
                         String txt = tm.getText();
-                        System.out.println("Nhận được " + txt);
+                        System.out.println("Receiver: " + txt);
                         msg.acknowledge();// gửi tín hiệu ack
                     } else if (msg instanceof ObjectMessage) {
                         ObjectMessage om = (ObjectMessage) msg;
